@@ -11,6 +11,8 @@ namespace TextFilePlugin
         public TextFileMessageSender(string path) 
         {
             if (String.IsNullOrWhiteSpace(path)) throw new ArgumentNullException(nameof(path));
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
             _path = path;
         }
 
@@ -19,10 +21,11 @@ namespace TextFilePlugin
             var textFileMessage = message as TextFileMessage;
             if (textFileMessage == null) return;
 
-            using (var writer = new StreamWriter(_path + "output.txt"))
+            using (var writer = new StreamWriter(_path + "output.txt", append:true))
             {
                 writer.WriteLine("First Name, Last Name, Number of Sales");
                 writer.WriteLine(FormatMessage(textFileMessage));
+                writer.Close();
             }
         }
 

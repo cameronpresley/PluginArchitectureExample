@@ -27,7 +27,6 @@ namespace PluginArchitectureExample
         private void btnDoWorkflow_Click(object sender, EventArgs e)
         {
             var selectedItem = cmbWorkflows.SelectedItem;
-            if (selectedItem == null) return;
             if (!(selectedItem is Workflow)) return;
             var workflow = (Workflow) selectedItem;
             workflow.Do();

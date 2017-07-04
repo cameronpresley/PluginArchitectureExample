@@ -43,6 +43,7 @@
     <Compile Include="EmailMessage.cs" />
     <Compile Include="EmailMessageRetriever.cs" />
     <Compile Include="EmailMessageSender.cs" />
+    <Compile Include="EmailMessageWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

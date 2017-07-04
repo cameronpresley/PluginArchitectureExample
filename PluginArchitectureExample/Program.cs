@@ -18,7 +18,7 @@ namespace PluginArchitectureExample
             Application.SetCompatibleTextRenderingDefault(false);
 
             var workflows = new WorkflowRetriever().RetrieveWorkflows();
-            Application.Run(new Form1());
+            Application.Run(new Form1(workflows));
         }
     }
 }

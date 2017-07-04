@@ -1,22 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Plugin.Core
 {
-    public class Workflow
+    public abstract class Workflow
     {
+        private readonly MessageRetriever _retriever;
+        private readonly MessageSender _sender;
+
+        protected Workflow(MessageRetriever retriever, MessageSender sender)
+        {
+            _retriever = retriever ?? throw new ArgumentNullException(nameof(retriever));
+            _sender = sender ?? throw new ArgumentNullException(nameof(sender));
+        }
+
         public void Do(MessageRetriever retriever, MessageSender sender)
         {
             try
             {
-                retriever.RetrieveMessages().ToList().ForEach(sender.SendMessage);
+                _retriever.RetrieveMessages()
+                    .ToList()
+                    .ForEach(_sender.SendMessage);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Failed to retrieve or send messages.");
+                Console.WriteLine("Error of " + ex.Message);
             }
         }
     }

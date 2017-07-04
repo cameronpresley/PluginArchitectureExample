@@ -14,6 +14,8 @@ namespace Plugin.Core
             _sender = sender ?? throw new ArgumentNullException(nameof(sender));
         }
 
+        public abstract string Name { get; }
+
         public void Do()
         {
             try
@@ -25,6 +27,11 @@ namespace Plugin.Core
                 Console.WriteLine("Failed to retrieve or send messages.");
                 Console.WriteLine("Error of " + ex.Message);
             }
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

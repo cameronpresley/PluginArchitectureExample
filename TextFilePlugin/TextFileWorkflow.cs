@@ -9,5 +9,12 @@ namespace TextFilePlugin
         {
             
         }
+
+        public override string Name => "Text File Workflow";
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

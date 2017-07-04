@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginArchitectureExample", "PluginArchitectureExample\PluginArchitectureExample.csproj", "{96D3B997-BF17-4C71-AE14-4CBAE7F7B8CC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5D4C1EE1-1547-49AE-9C14-93DD013F9E29} = {5D4C1EE1-1547-49AE-9C14-93DD013F9E29}
+		{5E1EB2FF-117B-4C1E-B968-CF1F7AC8CEA7} = {5E1EB2FF-117B-4C1E-B968-CF1F7AC8CEA7}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.Core", "Plugin.Core\Plugin.Core.csproj", "{D807D9E4-4F23-4132-9F5E-909371D9ED68}"

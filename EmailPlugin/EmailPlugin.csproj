@@ -53,4 +53,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(TargetPath) $(SolutionDir)PluginArchitectureExample\$(OutDir) /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

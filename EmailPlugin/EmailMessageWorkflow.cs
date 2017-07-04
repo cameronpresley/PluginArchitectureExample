@@ -4,7 +4,7 @@ namespace EmailPlugin
 {
     public class EmailMessageWorkflow : Workflow
     {
-        public EmailMessageWorkflow(EmailMessageRetriever retriever, EmailMessageSender sender) : base(retriever, sender)
+        public EmailMessageWorkflow():base(new EmailMessageRetriever(), new EmailMessageSender())
         {
         }
 

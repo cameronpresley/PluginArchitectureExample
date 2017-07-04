@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Plugin.Core
 {
-    public interface MessageSender
+    public abstract class MessageSender
     {
-        void SendMessage(Message message);
+        public abstract void SendMessage(List<Message> message);
     }
 }

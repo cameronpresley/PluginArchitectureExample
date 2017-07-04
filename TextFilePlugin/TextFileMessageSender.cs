@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Plugin.Core;
 
 namespace TextFilePlugin
@@ -16,15 +18,16 @@ namespace TextFilePlugin
             _path = path;
         }
 
-        public void SendMessage(Message message)
+        public override void SendMessage(List<Message> messages)
         {
-            var textFileMessage = message as TextFileMessage;
-            if (textFileMessage == null) return;
-
+            var validMessages = messages.OfType<TextFileMessage>().ToList();
             using (var writer = new StreamWriter(_path + "output.txt", append:true))
             {
                 writer.WriteLine("First Name, Last Name, Number of Sales");
-                writer.WriteLine(FormatMessage(textFileMessage));
+                foreach (var message in validMessages)
+                {
+                    writer.WriteLine(FormatMessage(message));
+                }
                 writer.Close();
             }
         }

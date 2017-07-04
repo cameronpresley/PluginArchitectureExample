@@ -18,9 +18,7 @@ namespace Plugin.Core
         {
             try
             {
-                _retriever.RetrieveMessages()
-                    .ToList()
-                    .ForEach(_sender.SendMessage);
+                _sender.SendMessage(_retriever.RetrieveMessages().ToList());
             }
             catch (Exception ex)
             {

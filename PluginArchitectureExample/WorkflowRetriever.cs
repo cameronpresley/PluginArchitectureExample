@@ -29,7 +29,8 @@ namespace PluginArchitectureExample
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Failed to load workflow for assembly " + file);
+                    Console.WriteLine($@"Failed to load workflow for assembly {file}");
+                    Console.WriteLine(ex.Message);
                 }
             }
             return results;

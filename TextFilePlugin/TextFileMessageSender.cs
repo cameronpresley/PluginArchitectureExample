@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Odbc;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Plugin.Core;
 
 namespace TextFilePlugin
@@ -12,16 +7,13 @@ namespace TextFilePlugin
     public class TextFileMessageSender : MessageSender
     {
         private readonly string _path;
-        public TextFileMessageSender()
-        {
-            
-        }
 
-        protected TextFileMessageSender(string path)
+        public TextFileMessageSender(string path) 
         {
             if (String.IsNullOrWhiteSpace(path)) throw new ArgumentNullException(nameof(path));
             _path = path;
         }
+
         public void SendMessage(Message message)
         {
             var textFileMessage = message as TextFileMessage;

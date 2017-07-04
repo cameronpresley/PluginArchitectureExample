@@ -4,7 +4,8 @@ namespace TextFilePlugin
 {
     public class TextFileWorkflow : Workflow
     {
-        public TextFileWorkflow():base(new TextFileMessageRetriever(), new TextFileMessageSender())
+        public TextFileWorkflow()
+            :base(new TextFileMessageRetriever(), new TextFileMessageSender(@"C:\temp\"))
         {
             
         }

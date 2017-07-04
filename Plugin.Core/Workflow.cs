@@ -14,7 +14,7 @@ namespace Plugin.Core
             _sender = sender ?? throw new ArgumentNullException(nameof(sender));
         }
 
-        public void Do(MessageRetriever retriever, MessageSender sender)
+        public void Do()
         {
             try
             {

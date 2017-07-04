@@ -4,6 +4,6 @@ namespace Plugin.Core
 {
     public abstract class MessageSender
     {
-        public abstract void SendMessage(List<Message> message);
+        public abstract void SendMessage(List<Message> messages);
     }
 }
